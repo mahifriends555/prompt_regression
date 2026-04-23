@@ -1,0 +1,30 @@
+
+# environment variables (NEVER commit secrets)
+.env
+
+# python cache files
+__pycache__/
+*.pyc
+
+# virtual environment
+venv/
+.env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# test / coverage
+.pytest_cache/
+.coverage
+
+# IDE files
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# SQLite database (we will create this later)
+*.db
