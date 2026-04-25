@@ -1,0 +1,12 @@
+
+- name: greeting_test
+  prompt: "Say hello"
+  expected: "Hello"
+
+- name: summary_test
+  prompt: "Summarize: AI is transforming the world."
+  expected: "AI is changing the world."
+
+- name: greeting_test
+  prompt: "Say hello"
+  expected: "Banana spaceship explosion"   # totally unrelated
