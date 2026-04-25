@@ -1,4 +1,10 @@
 
+    # check file exists
+    # open and load yaml
+    # validate structure
+    # loop and convert
+    # return list
+
 import os
 import yaml
 from typing import List
