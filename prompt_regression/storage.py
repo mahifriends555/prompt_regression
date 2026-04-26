@@ -35,6 +35,8 @@ def save_results(results: List[TestResult]) -> None:
     with Session(engine) as session:
         for result in results:
             # convert runtime object into DB row format
+            # if result.output.startswith("ERROR:"):  # skip failed runs  
+            #     continue
             db_row = TestResultDB(
                 test_name=result.test_name,
                 prompt=result.prompt,
@@ -61,3 +63,5 @@ def get_latest_results(test_name: str) -> List[TestResultDB]:
         results = session.exec(statement).all()
 
     return results
+
+

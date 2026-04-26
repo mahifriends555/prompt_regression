@@ -1,9 +1,33 @@
 # tests.yaml
 
 - name: greeting_test
-  prompt: "Say hello to the user"
-  expected: "Hello! How can I help you today?"
+  prompt: "Say hello to the user in a friendly and professional way."
+  expected: "Hello! Welcome. How can I assist you today?"
 
-- name: summary_test
-  prompt: "Summarize this in one sentence: The Eiffel Tower is in Paris, France."
-  expected: "The Eiffel Tower is located in Paris, France."
+- name: capital_city
+  prompt: "What is the capital of Japan?"
+  expected: "The capital of Japan is Tokyo."
+
+- name: math_simple
+  prompt: "What is 15 multiplied by 8?"
+  expected: "15 multiplied by 8 is 120."
+
+- name: summarize_test
+  prompt: "Summarize this in one sentence: The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It was constructed from 1887 to 1889 as the centerpiece of the 1889 World's Fair."
+  expected: "The Eiffel Tower is a wrought-iron tower in Paris, built between 1887 and 1889 for the World's Fair."
+
+- name: sentiment_test
+  prompt: "What is the sentiment of this sentence: 'I absolutely loved the movie, it was fantastic!'"
+  expected: "The sentiment is positive."
+
+- name: translation_test
+  prompt: "Translate to French: Good morning, how are you?"
+  expected: "Bonjour, comment allez-vous?"
+
+- name: coding_test
+  prompt: "Write a Python function that returns the square of a number."
+  expected: "def square(n): return n * n"
+
+- name: tone_test
+  prompt: "Rewrite this formally: 'Hey, just wanted to check if you got my email?'"
+  expected: "I wanted to follow up to confirm whether you received my previous email."

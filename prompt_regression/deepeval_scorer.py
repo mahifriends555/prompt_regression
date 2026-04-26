@@ -1,6 +1,6 @@
 
 import os
-from unittest import result
+# from unittest import result
 from openai import OpenAI
 from typing import List
 from prompt_regression.models import TestResult
