@@ -5,7 +5,7 @@ from prompt_regression.storage import init_db, save_results
 from prompt_regression.scorer import score_results
 from prompt_regression.comparator import compare_results
 from prompt_regression.reporter import display_results
-
+from prompt_regression.deepeval_scorer import evaluate_with_deepeval
 
 def main() -> None:
     """Run the full prompt regression pipeline."""
@@ -20,7 +20,7 @@ def main() -> None:
     init_db()
 
     # compute similarity scores before saving so DB has full data
-    scored_results = score_results(results)
+    scored_results = evaluate_with_deepeval(results)
 
     # store results for future comparison
     save_results(scored_results)
