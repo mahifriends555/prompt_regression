@@ -27,9 +27,11 @@ def evaluate_with_deepeval(results: List[TestResult]) -> List[TestResult]:
                                 Score the actual answer compared to the expected answer using:
 
                                 1.0 = perfect match or meaning equivalent  
-                                0.7–0.9 = mostly correct, minor differences  
-                                0.4–0.6 = partially correct  
-                                0.0–0.3 = incorrect or unrelated  
+                                0.8–0.9 = mostly correct, minor differences  
+                                0.5–0.7 = partially correct  
+                                0.0–0.4 = incorrect or unrelated  
+                                    
+                                Be strict. Do not give 1.0 unless answers are almost identical.
 
                                 Return ONLY a number between 0 and 1.
                                 """
