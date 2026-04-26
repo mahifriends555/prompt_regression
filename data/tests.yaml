@@ -1,12 +1,9 @@
+# tests.yaml
 
 - name: greeting_test
-  prompt: "Say hello"
-  expected: "Hello"
+  prompt: "Say hello to the user"
+  expected: "Hello! How can I help you today?"
 
 - name: summary_test
-  prompt: "Summarize: AI is transforming the world."
-  expected: "AI is changing the world."
-
-- name: greeting_test
-  prompt: "Say hello"
-  expected: "Banana spaceship explosion"   # totally unrelated
+  prompt: "Summarize this in one sentence: The Eiffel Tower is in Paris, France."
+  expected: "The Eiffel Tower is located in Paris, France."

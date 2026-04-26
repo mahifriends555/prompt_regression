@@ -1,5 +1,6 @@
 
 import os
+from unittest import result
 from openai import OpenAI
 from typing import List
 from prompt_regression.models import TestResult
@@ -15,15 +16,23 @@ def evaluate_with_deepeval(results: List[TestResult]) -> List[TestResult]:
 
         try:
             response = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-4o",
                 temperature=0,
                 messages=[
                     {
                         "role": "system",
-                        "content": (
-                            "You are a strict evaluator. Given an expected answer and an actual answer, "
-                            "score the actual answer from 0.0 to 1.0 based on correctness. "
-                            "Reply with ONLY a number, nothing else."
+                        "content": ("""
+                                You are a strict evaluator.
+
+                                Score the actual answer compared to the expected answer using:
+
+                                1.0 = perfect match or meaning equivalent  
+                                0.7–0.9 = mostly correct, minor differences  
+                                0.4–0.6 = partially correct  
+                                0.0–0.3 = incorrect or unrelated  
+
+                                Return ONLY a number between 0 and 1.
+                                """
                         ),
                     },
                     {
@@ -38,7 +47,9 @@ def evaluate_with_deepeval(results: List[TestResult]) -> List[TestResult]:
             )
 
             score_text = response.choices[0].message.content.strip()
-            result.similarity_score = float(score_text)
+            # result.similarity_score = float(score_text)
+            score = float(score_text.split()[0])
+            result.similarity_score = score
 
         except Exception as e:
             print(f"Scoring error: {e}")
